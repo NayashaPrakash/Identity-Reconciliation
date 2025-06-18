@@ -1,7 +1,12 @@
+from types import MethodType
 from flask import Flask, request, jsonify
 import models
 
 app = Flask(__name__)
+
+@app.route('/', methods=['GET'])
+def home():
+    return "Welcome to Bitespeed's Identity Reconciliation task!"
 
 @app.route('/records', methods=['GET'])
 def get_records():
